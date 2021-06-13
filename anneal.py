@@ -65,7 +65,7 @@ class SimAnneal(object):
         """
         # Initialize with the greedy solution.
         self.cur_solution, self.cur_fitness = self.initial_solution()
-        print("Annealing optimizasyonu başlatılıyor.")
+        print("Annealing optimizasyonu başlatılıyor...")
         while self.T >= self.stopping_temperature and self.iteration < self.stopping_iter:
             candidate = list(self.cur_solution)
             l = random.randint(2, self.N - 1)
