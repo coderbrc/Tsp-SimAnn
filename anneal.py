@@ -63,7 +63,6 @@ class SimAnneal(object):
         """
         SA algoritmasını çalıştırıyoruz
         """
-        # Initialize with the greedy solution.
         self.cur_solution, self.cur_fitness = self.initial_solution()
         print("Annealing optimizasyonu başlatılıyor...")
         while self.T >= self.stopping_temperature and self.iteration < self.stopping_iter:
@@ -82,4 +81,3 @@ class SimAnneal(object):
        TSP yolunu matloplit ile görselleştirdik,
         """
         visualize_tsp.plotTSP([self.best_solution], self.coords)
-

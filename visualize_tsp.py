@@ -35,7 +35,6 @@ def plotTSP(paths, points, num_iters=1):
     for i in range(0, len(x)-1):
         plt.arrow(x[i], y[i], (x[i+1] - x[i]), (y[i+1] - y[i]), head_width=a_scale,
                 color='g', length_includes_head=True)
-    #Set axis too slitghtly larger than the set of x and y
     plt.xlim(min(x)*1.1, max(x)*1.1)
     plt.ylim(min(y)*1.1, max(y)*1.1)
     plt.show()
