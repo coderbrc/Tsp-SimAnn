@@ -83,9 +83,6 @@ class SimAnneal(object):
         visualize_tsp.plotTSP([self.best_solution], self.coords)
 
     def plot_learning(self):
-        """
-        Plot the fitness through iterations.
-        """
         plt.plot([i for i in range(len(self.fitness_list))], self.fitness_list)
         plt.ylabel("Fitness")
         plt.xlabel("Iteration")
