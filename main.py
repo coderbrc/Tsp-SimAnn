@@ -11,3 +11,4 @@ if __name__ == "__main__":
     sa = SimAnneal(coords, stopping_iter=10000)
     sa.anneal()
     sa.visualize_routes()
+    sa.plot_learning()

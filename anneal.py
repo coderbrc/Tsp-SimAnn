@@ -6,7 +6,7 @@ class SimAnneal(object):
     def __init__(self, coords, T=-1, alpha=-1, stopping_T=-1, stopping_iter=-1):
         self.coords = coords
         self.N = len(coords)
-        self.T = math.sqrt(self.N) if T == -1 else T
+        self.T = 500 if T == -1 else T
         self.T_save = self.T
         self.alpha = 0.995 if alpha == -1 else alpha
         self.stopping_temperature = 1 if stopping_T == -1 else stopping_T
@@ -81,3 +81,12 @@ class SimAnneal(object):
        TSP yolunu matloplit ile görselleştirdik,
         """
         visualize_tsp.plotTSP([self.best_solution], self.coords)
+
+    def plot_learning(self):
+        """
+        Plot the fitness through iterations.
+        """
+        plt.plot([i for i in range(len(self.fitness_list))], self.fitness_list)
+        plt.ylabel("Fitness")
+        plt.xlabel("Iteration")
+        plt.show()
