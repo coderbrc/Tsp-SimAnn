@@ -6,7 +6,7 @@ class SimAnneal(object):
     def __init__(self, coords, T=-1, alpha=-1, stopping_T=-1, stopping_iter=-1):
         self.coords = coords
         self.N = len(coords)
-        self.T = 500 if T == -1 else T
+        self.T = 2000 if T == -1 else T
         self.T_save = self.T
         self.alpha = 0.995 if alpha == -1 else alpha
         self.stopping_temperature = 1 if stopping_T == -1 else stopping_T
@@ -16,6 +16,8 @@ class SimAnneal(object):
         self.best_solution = None
         self.best_fitness = float("Inf")
         self.fitness_list = []
+        self.initial = 100
+
     def initial_solution(self):
         cur_node = random.choice(self.nodes)  # rastgele bir düğüm oluştur
         solution = [cur_node]
